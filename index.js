@@ -77,6 +77,7 @@ client.on('messageCreate', async message => {
     /*メッセージを送った人*/
     const member = message.guild.members.resolve(message.author)
 
+    /*管理者権限かどうかチェックする関数*/
     async function isNotAdmin(message) {
         if (!member.roles.cache.has(adminRole.id)) {
             await message.delete();
